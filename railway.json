@@ -1,5 +1,6 @@
 {
   "build": {
-    "dockerfilePath": "src/Services/IDP.Service/IDP.Service.Api/Dockerfile"
+    "dockerfilePath": "src/Services/IDP.Service/IDPService.Api/Dockerfile",
+    "context": "src/Services/IDP.Service/IDPService.Api"
   }
 }
