@@ -26,8 +26,11 @@ WORKDIR /app
 # کپی فایل‌های منتشرشده
 COPY --from=publish /app/publish .
 
-# کپی فایل‌های تنظیمات از مسیر اصلی پروژه
+# کپی فایل‌های تنظیمات به مسیر اجرا
 COPY appsettings.json .
 COPY appsettings.Development.json .
+
+# اجرای اپلیکیشن روی HTTP فقط (بدون HTTPS برای جلوگیری از خطای گواهی)
+ENV ASPNETCORE_URLS=http://+:8080
 
 ENTRYPOINT ["dotnet", "IDP.Service.Api.dll"]
