@@ -32,5 +32,7 @@ COPY --from=publish /app/publish .
 COPY src/Services/IDP.Service/IDPService.Api/appsettings.json .
 COPY src/Services/IDP.Service/IDPService.Api/appsettings.Development.json .
 
+# تنظیم آدرس اجرا
 ENV ASPNETCORE_URLS=http://+:8080
+
 ENTRYPOINT ["dotnet", "IDP.Service.Api.dll"]
