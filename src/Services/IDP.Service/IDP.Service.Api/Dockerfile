@@ -10,16 +10,12 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 # کپی فایل پروژه و restore
-
-COPY src/Services/IDP.Service/IDPService.Api/IDP.Service.Api.csproj ./src/
-WORKDIR /src
-
-
-RUN dotnet restore "./src/IDP.Service.Api.csproj"
+COPY src/Services/IDP.Service/IDPService.Api/IDP.Service.Api.csproj ./
+RUN dotnet restore "IDP.Service.Api.csproj"
 
 # کپی کل پروژه و build
-COPY . .
-RUN dotnet build "./src/IDP.Service.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+COPY src/Services/IDP.Service/IDPService.Api/. ./
+RUN dotnet build "IDP.Service.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # مرحله publish
 FROM build AS publish
