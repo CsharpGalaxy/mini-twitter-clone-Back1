@@ -33,9 +33,9 @@ WORKDIR /app
 # کپی فایل‌های منتشرشده
 COPY --from=publish /app/publish .
 
-# کپی فایل‌های تنظیمات به مسیر اجرا
-COPY appsettings.json .
-COPY appsettings.Docker.json .
+## کپی فایل‌های تنظیمات به مسیر اجرا
+#COPY appsettings.json .
+#COPY appsettings.Docker.json .
 
 
 ENTRYPOINT ["dotnet", "IDP.Service.Api.dll"]
