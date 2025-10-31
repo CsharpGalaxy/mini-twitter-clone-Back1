@@ -1,0 +1,5 @@
+{
+  "build": {
+    "dockerfilePath": "src/Services/IDP.Service/IDP.Service.Api/Dockerfile"
+  }
+}
