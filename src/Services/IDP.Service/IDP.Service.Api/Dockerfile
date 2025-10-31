@@ -10,7 +10,8 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
 # کپی فایل پروژه و restore
-COPY ["IDP.Service.Api.csproj", "."]
+COPY [IDP.Service.Api.csproj, .]
+
 RUN dotnet restore "./IDP.Service.Api.csproj"
 
 # کپی کل پروژه و build
